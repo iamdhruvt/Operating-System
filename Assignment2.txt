@@ -1,0 +1,331 @@
+1. 
+Ans:-->
+         #!/bin/bash
+  
+         echo "Enter no."
+         read num
+         for((i=1 ;i<=num; i++))
+         do
+          mkdir a$i
+         done
+
+2. 
+>       #!/bin/bash
+   
+        do
+        echo '1.Find length'
+        echo '2.Copying string'
+        echo '3.Concate of string'
+        echo '4.compare to sring'
+        echo '5.Reverse string'
+		read str1
+		read option
+		case $option in
+        1) echo ${#str1};;
+
+        2) str2=$str1
+          echo $str2
+          ;;
+        3)str2="Tyagi"
+                echo $str1$str2
+                ;;
+        4) str2="Dhruv"
+           if [ $str1 == $str2 ]
+           then
+            echo "Equal"
+           else
+            echo "Not equal"
+           fi
+            ;;
+        5) echo $str1 | rev
+                ;;
+  
+
+
+
+3.
+->   for((i=1;i<10;i++))
+   do
+        mv a$i file$i
+   done
+
+4. 
+->    
+         echo "Path = $PATH"  
+         echo "Shell = $SHELL"
+         echo "History = $HISTORY"
+         echo "Logname = $LOGNAME"
+         echo "Term = $TERM"
+
+
+5. 
+-> 
+     ls -la | cut -b 1-10
+     ls -la | cut -c 1-10
+
+6. Write a shell script to print all files permissions and name of file
+-> 
+        #!/bin/bash
+
+        ls -l | awk '{ print $1 }'
+
+7.
+->   
+       #!/bin/bash
+	for i in *
+	do
+		if [ -e $i ]
+		then
+			file=`ls -l $i | awk '{print $5}'`
+			if (( $file > 5000 ))
+			then
+				ls -l $i
+			fi 
+		fi
+	done
+
+.............................................................................................
+
+##SHELL_PROGRAMS
+
+1. 
+
+->      #!/bin/bash
+	echo 'Enter a year : '
+	read year
+	if (( $year%4 == 0 && $year%100 != 0 || $year%400 == 0))
+	then
+		echo 'Leap Year'
+	else
+		echo 'Not a Leap Year'
+	fi
+    
+2. 
+	
+   a) case :->
+
+          echo "enter number between 1 to 7"
+             read num
+
+          case $num in
+
+             1) echo "Sunday" ;;
+             2) echo "Monday" ;;
+             3) echo "Tuesday" ;;
+             4) echo "Wednesday" ;;
+             5) echo "Thursday" ;;
+             6) echo "Friday" ;;
+             7) echo "Saturday" ;;
+
+           esac
+
+  
+  a) elif:-	
+            
+
+	echo 'Enter the no of Day : '
+	read day
+
+	if [ $day == 1 ]
+	then
+		echo 'Sunday'
+	elif [ $day == 2 ]
+	then
+		echo 'Monday'
+	elif [ $day == 3 ]
+	then
+		echo 'Tuesday'
+	elif [ $day == 4 ]
+	then
+		echo 'Wednesday'
+	elif [ $day == 5 ]
+	then
+		echo 'Thrusday'
+	elif [ $day == 6 ]
+	then
+		echo 'Friday'
+	elif [ $day == 7 ]
+	then
+		echo 'Saturday'
+	else
+		echo 'Invalid Entry'
+	fi
+
+ 
+
+3. 
+  a) 
+->
+
+                echo "enter 1st number"
+                  read num1
+                echo "enter 2nd number"
+                   read num2
+                echo "enter 3rd number"
+                   read num3
+
+                if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+                 then 
+                   echo " $num1 is greatest number"
+
+                elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+                   then
+                     echo " $num2 is greatest number"
+                else
+                     echo " $num3 is greatest number"
+                fi
+
+
+b) 
+->
+                     echo "enter 1st number"
+                      read num1
+                     echo "enter 1st number"
+                      read num2
+                     echo "enter 1st number"
+                      read num3
+
+                   sum=`expr $num1 + $num2 + $num3`
+                      avg=`expr $sum / 3`
+                       echo "Sum = $sum"
+                      echo "Average = $avg"
+
+4. 
+->
+           read  number
+           if [ $((number%2)) -eq 0 ]
+           then
+           echo "Number is even."
+           else
+           echo "Number is odd."
+           fi
+
+5. 
+->
+         #!/bin/bash
+
+	mon=$(date | awk '{print $3}')
+	year=$(date | awk '{print $4}')
+
+	let "prev=year-1" "next=year+1"
+
+	cal $mon $prev
+	cal $mon $year
+	cal $mon $next
+
+
+6.
+->
+  
+  a) let:->
+    
+
+       a=10
+       b=20
+ 
+       let "sum=$(( $a + $b ))"
+ 
+       echo $sum
+
+ b) expr:->
+
+         echo "Enter two numbers"
+         read num1 num2
+         sum = 'expr $num1 + $num2'
+         echo "The sum is = $sum"
+
+
+  c) bc:->
+
+      echo 'scale=4;10+20' | bc
+
+
+7. 
+
+       #!/bin/bash
+
+	echo 'Enter the range  : '
+	read range
+	i=1
+	prev=0
+	newprev=0
+	while (( $i+$prev < $range ))
+	do
+		echo $(expr $prev + $i)
+		newprev=$prev
+		prev=$i
+		i=$(expr $newprev + $i)
+	done
+ 
+
+
+8. 
+->
+
+       #!/bin/bash
+
+	echo 'Enter a string : '
+	read str
+	rev=""
+	len=${#str}
+	for (( i=$len; i>0; i-- ))
+	do
+		temp=$(expr $str | cut -c $i)
+		rev=$rev$temp
+	done
+
+	echo $rev
+
+
+9.
+->
+             #!/bin/bash
+
+
+	echo 'Enter array of Strings : '
+	read -a arr
+
+	min=0
+	max=`expr ${#arr[@]} - 1`
+	x=$max
+	while (( $min <= $max ))
+	do
+		newArr[$min]=${arr[$max]}
+		newArr[$max]=${arr[$min]}
+		(( min++ ))
+		(( max-- ))
+	done
+
+	max=$x
+
+	for (( i=0; i<=max; i++ ))
+	do
+		rev=""
+		str=${newArr[$i]}
+		let "len=${#str} -1"
+		for (( j=$len; j>=0; j-- ))
+		do
+			rev="$rev${str:$j:1}"
+		done
+		newArr[$i]=$rev
+	done
+
+	echo ${newArr[@]}
+
+10. 
+->
+            #!/bin/bash
+
+	echo 'Enter a number : '
+	read num
+	n=$num
+	sum=0
+	rem=0
+	while (( $n > 0 ))
+	do
+		rem=`expr $n % 10`
+		sum=`expr $sum \* 10`
+		sum=`expr $sum + $rem`
+		n=`expr $n / 10`
+	done
+	echo 'Reverse : ' $sum
