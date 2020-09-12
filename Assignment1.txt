@@ -1,0 +1,271 @@
+1)a) 
+
+date:
+1) date +%a
+2) date +%A
+3) date +%b
+4) date +%B
+5) date +%c
+6) date +%C
+7) date +%d
+8) date +%D
+9) date +%e
+10) date +%F
+11) date +%g
+12) date +%G
+13) date +%h
+14) date +%H
+15) date +%I
+16) date +%j
+17) date +%k
+18) date +%l
+19) date +%m
+20) date +%M
+21) date +%n
+22) date +%N
+23) date +%p
+24) date +%P
+25) date +%r
+26) date +%R
+27) date +%s
+28) date +%S
+29) date +%t
+30) date +%T
+31) date +%u
+32) date +%U
+
+
+b) 
+cal:
+cal 2020
+
+c) bc :
+1) bc -h
+2) bc -i 
+3) bc -l 
+4) bc -w 
+5) bc -s 
+6) bc -q 
+7) bc -v
+           
+d) echo:
+echo "hello world"
+
+e) who :
+who [options] [filename] 
+
+
+f) whoami:
+whoami [OPTION]
+
+ g) logname :
+logname [OPTION]
+
+g) uname :
+uname [OPTION]
+
+h)seq :
+seq [OPTION]
+
+i) clear:
+this command is used to clear terminal.
+
+2)a)
+mkdir a b c
+touch a.txt b.txt c.txt
+cp -r c a
+
+b)
+mv b c
+
+c)alias Dhruv="ls -lh"
+           
+d)mv a CDAC
+
+3)a)
+touch file1.txt file2.txt file3.txt file4.txt file5.txt 
+
+        cat file*.txt
+        In file 1In file2In File 3In file 4
+        In file 5
+
+grep 's' file*.txt
+
+b)
+Cat > file.txt
+nano file.txt
+	      
+
+c)
+touch f1.txt f2.txt f3.txt f4.txt f5.txt
+
+d)
+rm -r a 
+rm -r b
+rm -r c
+
+4)
+	a) 
+        cat File1.txt
+
+	b)
+        cat -n File1.txt
+
+	c) 
+        tac File1.txt
+
+	d)
+        cat File1.txt File2.txt > File3.txt
+
+5)
+	a)
+        column f1.txt
+
+	b)
+        sort  file1.txt
+        sort -r file1.txt
+
+
+	c)
+        cat > .hello.txt
+        ls -a
+
+
+	d)
+        stat d1.txt
+
+	e)
+        ls -R
+
+	f)
+        ls -l
+
+	g)
+        ls -ld
+
+........................................................................................................................
+1)
+		a)
+                chmod 060 a.txt b.txt
+
+		b)
+                chmod 020 c.txt
+
+		c)
+                chmod 070 d.sh
+	        cat >> d.sh
+
+
+2)chmod 010 hello
+
+3)chmod 040 hello
+
+4)echo .*
+
+5)echo .*  /etc /directory
+
+6)find /etc -type f -name "*.conf"
+
+7)echo 'Dhruv' >> a.txt
+
+.............................................................................................
+
+1)
+        touch a-->Cd a --> Mkdir b -->touch .a.txt--> touch a.txt
+	Cd b--> Mkdir b-->touch .b.txt--> touch b.txt
+        Cd c -->Mkdir c-->touch .c.txt-->touch c.txt
+
+
+       a)
+               touch a --> Cd a --> Mkdir b -->touch .a.txt
+	       Cd b --> Mkdir b -->touch .b.txt
+               Cd c --> Mkdir c --> touch .c.txt
+
+
+       b)
+               touch a --> Cd a --> Mkdir b --> touch a.txt
+         	Cd b --> Mkdir b -->touch b.txt
+                Cd c --> Mkdir c --> touch c.txt
+
+       c)
+		cp -r c a
+
+       d)
+		cp -r a b
+
+2.	
+chmod 040 c
+
+3.	
+ cp –r c b
+
+4.	
+ cd b --> mkdir data
+
+
+5.	
+ chmod 060 b
+
+6.	
+  cd b --> mkdir data2
+
+
+7.	
+  cd b --> touch data.txt
+
+
+8.	
+   mv c copied_dir
+
+9.	
+   chmod 010 copied_dir
+
+10.	
+  ls cannot run because of executable only cannot read
+
+11.	
+   cannot move dir to outside because of restriced permissions
+
+
+12.	
+   cannot move, permission access denied
+
+13.	
+ sudo chmod
+
+14.	
+   Chmod u+rwx a
+
+15.	
+   Mkdir a/sample
+
+16.	
+   Mkdir x
+
+17.	
+   Mv x ./a
+
+18.	
+  mkdir movies
+
+19.	
+  sudo usermod -aG sudo newuser
+
+20.	
+ chgrp scifi myfile
+ ls -l myfile
+
+21.	
+ chmod a=rwx a
+
+22.	
+ pkexec chmod go-w /usr/lib/sudo/sudoers.so
+
+23.	
+ sudo chown -R username:group directory
+
+24.	
+ sudo usermod -aG sudo newuser
+
+25.	
+ rm -rf a.txt
